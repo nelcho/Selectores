@@ -1,0 +1,271 @@
+:root {
+    --azul: #0071b7;
+    --blanco: #FFF;
+    --naranja: #ff4f1e;
+}
+html {
+    font-size: 62.5%; /** 1REM = 10pX **/
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+  
+body {
+    background-color: var(--azul);
+    font-family:  'Lato', sans-serif;
+    font-size: 1.6rem;
+}
+
+h1, h2 {
+    color: var(--blanco);
+    text-align: center;
+    margin: 5rem 0;
+    padding: 1rem;
+}
+.caja-curso {
+    background-color: var(--naranja);
+    text-align: center;
+    color: var(--blanco);
+    padding: 5rem;
+
+}
+.caja-curso h1 {
+    margin: 0;
+}
+.caja-curso p {
+    font-size: 2.4rem;
+}
+.caja-curso a {
+    font-size: 2.4rem;
+    padding: 2rem;
+    display: inline-block;
+    text-decoration: none;
+    color: var(--blanco);
+    padding: 0;
+}
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+.box {
+    background-color: var(--naranja);
+    color: var(--blanco);
+    padding: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    border: 1rem solid #bb2b03;
+}
+
+.codigo {
+    background-color: var(--blanco);
+    padding: 5rem;
+}
+
+
+
+
+
+/*** 1.- Selector de Etiqueta ***/
+
+.a p {
+    font-size: 2rem;
+    color: red;
+}
+
+
+
+/*** 2.- Selector de Clase ***/
+
+.primer-parrafo {
+    font-size: 4rem;
+    color: red;
+}
+
+
+
+/*** 3.- Selector de 2 Clases ***/
+
+.textoA {
+    background-color: red;
+}
+
+.azul {
+    color: blue;
+}
+
+.mayusculas {
+    text-transform: uppercase;
+}
+
+/* de esta manera se selecciona un elemento que tenga dos clases */
+.texto.mayusculas {
+    font-size: 10rem;
+}
+
+
+
+/*** 4.- Selector de Clases Anidadas ***/
+
+/* Asi se selecciona un elemento que tiene una clase hijo o anidada */
+.header .descripcion {
+    color: red;
+}
+
+.descripcion {
+    color: blue;
+}
+
+
+
+/*** 5.- Selector de ID ***/
+
+/* Con el # se selecciona un elemento por su ID */
+#encabezadoB {
+    text-transform: uppercase;
+    color: red;
+}
+
+.textoB {
+    color: blue;
+}
+
+
+
+/*** 6.- Selector de Etiqueta y Clase ***/
+
+div.textoC {
+    background-color: yellow;
+}
+
+
+
+/*** 7.- 2 Elementos ***/
+
+/* Para seleccionar varios elementos se separan por una coma */
+.textoD,
+.ofertaA {
+    border: 3px solid yellow;
+    padding: 2rem;
+}
+
+
+
+/*** 8.- Primer Nivel de Hijos ***/
+
+/* Aplica las reglas css al primer nivel de hijos utilizando el > para indicar esto */
+.adminA > div{
+    border: 2px solid red;
+}
+
+
+
+/*** 9.- Primer Elemento Después ***/
+
+/* El + lo que hace es indicar el siguiente hijo del contenedor admin div */
+.adminB div + p{
+    background-color: red;
+}
+
+
+
+/*** 10.- Atributo ***/
+
+/* Puede aplicar cualquier atributo insertándolo a los [] */
+/* a[href="http://www.google.com"] {
+    color: red;
+} */
+
+/* Este es para los que inicien con http y se le indica con el ^ */
+/* a[href^="http"] {
+    color: red;
+} */
+
+/* Este aplica para los que finalizan en .com y se indica con el $ */
+a[href$=".com"] {
+    color: red;
+}
+
+input[type="tel"] {
+    border: 5px solid red;
+}
+
+
+
+/*** 11.- Primer Hijo de una lista ***/
+
+/* Aplica las reglas css al primer hijo */
+/* ul li:first-child {
+    border: 2px solid red;
+} */
+
+/* Es una variante del anterior y significa que selecciona el primero del tipo li */
+.c li:first-of-type {
+    border: 2px solid red;
+}
+
+
+
+/*** 12.- último Hijo de una lista ***/
+
+/* Funciona igual que el anterior pero con el ultimo hijo de la lista */
+/* .d li:last-child {
+    border: 2px solid red;
+} */
+
+.d li:last-of-type {
+    border: 2px solid red;
+}
+
+
+
+/*** 13.- Elemento en Especifico ***/
+
+/* Permite seleccionar el elemento deseado indicando entre paréntesis el numero del elemento */
+/* .e li:nth-child(2) {
+    border: 2px solid red;
+} */
+
+/* Este selector 2n + 1 aplica las reglas css a los impares de un rango de lista */
+/* .e li:nth-child(2n + 1) {
+    border: 2px solid red;
+} */
+
+
+/* Este hace lo mismo, aplica a los impares de una lista */
+/* .e li:nth-child(odd) {
+    border: 2px solid red;
+} */
+
+/* Este aplica solo a los pares de la lista */
+.e li:nth-child(even) {
+    border: 2px solid red;
+}
+
+
+
+/*** 14.- Seleccionar todos los elementos excepto uno o unos ***/
+
+/* Con :not() hacemos que seleccione todo menos lo que este en paréntesis */
+p:not(.texto) {
+    color: red;
+}
+
+/* Para cuando se necesita exceptuar mas de un elemento */
+p:not(.texto):not(.oferta) {
+    color: red;
+}
+
+
+
+/*** 15.- Primer Letra y Linea ***/
+
+.primer-letra::first-letter {
+    font-size: 20rem;
+}
+
+.primer-linea::first-line {
+    font-size: 4rem;
+}
